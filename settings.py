@@ -1,7 +1,8 @@
-from .settings_secret import *
+import json
+import os
 
-#DEBUG = True
-DEBUG = True
+DEBUG = os.environ.get('LONGTURN_DEBUG', True)
+SECRET_KEY = os.environ['LONGTURN_SECRET_KEY']
 
 ADMINS = (
 	('Michal Mazurek', 'akfaew@gmail.com'),
@@ -9,7 +10,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-# DATABASES from settings_secret
+# DATABASES from databases.json
+DATABASES = json.load(open(os.environ.get('LONGTURN_DATABASES', 'databases.json'), 'r'))
 
 APPEND_SLASH = True
 TIME_ZONE = 'Europe/Warsaw'

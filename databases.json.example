@@ -1,0 +1,19 @@
+{
+	"default": {
+		"ENGINE": "django.db.backends.postgresql_psycopg2",
+		"NAME": "longturn",
+		"USER": "longturn",
+		"PASSWORD": "longturn",
+		"HOST": "db",
+		"PORT": ""
+	},
+	"fluxbb": {
+		"ENGINE": "django.db.backends.postgresql_psycopg2",
+		"NAME": "longturn-fluxbb",
+		"USER": "longturn",
+		"PASSWORD": "longturn",
+		"HOST": "db",
+		"PORT": ""
+	}
+}
+
