@@ -1,0 +1,16 @@
+{% load menu_tags %}
+
+{% for child in children %}
+    {% if child.attr.category == "Technical" %}
+        <li class="child{% if child.selected %} selected{% endif %}{% if child.ancestor %} ancestor{% endif %}{% if child.sibling %} sibling{% endif %}{% if child.descendant %} descendant{% endif %}">
+            <a class="menu" href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">
+                {{ child.get_menu_title }}
+            </a>
+            {% if child.children %}
+                <ul class="panel">
+                        {% show_menu from_level to_level extra_inactive extra_active "submenu.html" "" "" child %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endif %}
+{% endfor %}

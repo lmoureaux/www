@@ -1,4 +1,15 @@
 django ==2.2
-beautifulsoup4 
-psycopg2 
+django-cms
+django-filer
+djangocms_style
+djangocms-text-ckeditor
+djangocms-link
+djangocms-file
+djangocms-picture
+djangocms-video
+djangocms-googlemap
+djangocms-snippet
+djangocms-style
+beautifulsoup4
+psycopg2
 flup

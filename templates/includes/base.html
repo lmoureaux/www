@@ -1,20 +1,32 @@
+{% load cms_tags menu_tags sekizai_tags %}
+
 <link rel="stylesheet" href="{{ STATIC_URL }}/style.css" type="text/css" />
 <link rel="shortcut icon" href="{{ STATIC_URL }}/favicon.ico" type="image/x-icon" />
 <html>
 <head>
 	<title>Longturn | {% block title %}{% endblock %}</title>
+	{% render_block "css" %}
 </head>
 <body>
 
+{% cms_toolbar %}
 {% include 'includes/toppanel.html' %}
 <center>
 <table>
 <tr>
 <td width=150 valign=top>{% include 'includes/leftpanel.html' %}</td>
-<td width=700 valign=top>{% block content %}{% endblock %}</td>
+<td width=700 valign=top>
+    {% if current_page != None %}
+        <h1>{% page_attribute "page_title" %}</h1>
+        <hr/>
+    {% endif %}
+    {% block content %}{% endblock %}
+    {% placeholder "content" %}
+</td>
 <td width=150 valign=top>{% include 'includes/rightpanel.html' %}</td>
 </tr>
 </table>
 </center>
+{% render_block "js" %}
 </body>
 </html>
