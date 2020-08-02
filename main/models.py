@@ -4,6 +4,26 @@ from longturn.serv.models import ServGlobalData
 import datetime
 import time
 
+from django.db import models
+from cms.extensions import PageExtension
+from cms.extensions.extension_pool import extension_pool
+
+CATEGORIES = {
+	'g': 'General',
+	'c': 'Community',
+	't': 'Technical',
+	'e': 'Extras',
+}
+
+class CategoryExtension(PageExtension):
+	category = models.CharField(max_length=128, choices=CATEGORIES.items(),
+								default='g', null=False)
+
+	def __str__(self):
+		return CATEGORIES[self.category]
+
+extension_pool.register(CategoryExtension)
+
 def paths(request):
 	return {
 		'STATIC_ROOT': settings.STATIC_ROOT,

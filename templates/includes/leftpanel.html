@@ -1,34 +1,26 @@
+{% load menu_tags %}
 <table>
 <tr>
 	<ul class="panel">
-	<li><a class="menu" href="{% url 'hello' %}">HOME</a></li>
-	<li><a class="menu" href="{% url 'intro' %}">intro</a></li>
-	<li><a class="menu" href="{% url 'rules' %}">LT rules</a></li>
-	<li><a class="menu" href="{% url 'lw_rules' %}">LW rules</a></li>
+		{% show_menu 0 2 10 10 "menu-toplevel-general.html" %}
 	</ul>
 </tr>
 <tr>
 	<h3>COMMUNITY</h3>
 	<ul class="panel">
-	<li><a class="menu" href="https://forum.longturn.net">forum</a></li>
-	<li><a class="menu" href="https://discord.gg/98krqGm">Discord</a></li>
-	<li><a class="menu" href="{% url 'players' %}">players</a></li>
-	<li><a class="menu" href="{% url 'contact' %}">contact</a></li>
+		{% show_menu 0 2 10 10 "menu-community.html" %}
 	</ul>
 </tr>
 <tr>
 	<h3>TECHNICAL</h3>
 	<ul class="panel">
-	<li><a class="menu" href="{% url 'tech_comps' %}">machines</a></li>
-	<li><a class="menu" href="https://github.com/longturn">github</a></li>
+		{% show_menu 0 2 10 10 "menu-technical.html" %}
 	</ul>
 </tr>
 <tr>
 	<h3>EXTRAS</h3>
 	<ul class="panel">
-	<li><a class="menu" href="{% url 'ranking' %}">ranking</a></li>
-	<li><a class="menu" href="{% url 'warcalc' %}">war calculator</a></li>
-	<li><a class="menu" href="{% url 'screenshots' %}">screenshots</a></li>
+		{% show_menu 0 2 10 10 "menu-extras.html" %}
 	</ul>
 </tr>
 <tr>

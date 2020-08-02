@@ -13,4 +13,5 @@ urlpatterns = [
 	url(r'^players/$',			players, {'sort': "username"}, name='players'),
 	url(r'^players/sort/(\w+)/$',		players, name='players'),
 	url(r'^invalid/$',			LogoutView.as_view(), name='invalid'),
+	url(r'^$',			players, {'sort': 'username'}),
 ]
