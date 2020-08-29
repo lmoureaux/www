@@ -1,0 +1,14 @@
+{% load menu_tags %}
+
+{% for child in children %}
+    <tr>
+        {% if forloop.counter > 1 %}
+            <h3>{{ child.get_menu_title | upper }}</h3>
+        {% endif %}
+        {% if child.children %}
+            <ul class="panel">
+                {% show_menu from_level to_level extra_inactive extra_active "submenu.html" "" "" child %}
+            </ul>
+        {% endif %}
+    </tr>
+{% endfor %}
